@@ -25,7 +25,7 @@
            <input type="text" name="address" required placeholder="address">
          </div>
          <div class="form-group">
-           <input type="number" name="zip" required placeholder="zip">
+           <input type="text" name="zip" required placeholder="zip">
          </div>
          <div class="form-group">
            <input type="text" name="phone" required placeholder="phone">
