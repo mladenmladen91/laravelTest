@@ -28,7 +28,7 @@
            <input type="number" name="zip" required placeholder="zip">
          </div>
          <div class="form-group">
-           <input type="number" name="phone" required placeholder="phone">
+           <input type="text" name="phone" required placeholder="phone">
          </div>
           <div class="form-group">
           <select type="text" name="group_id" required>

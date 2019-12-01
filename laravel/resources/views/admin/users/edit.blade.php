@@ -27,10 +27,10 @@
            <input type="text" name="address" required placeholder="address" value="{{$user->address}}">
          </div>
          <div class="form-group">
-           <input type="number" name="zip" required placeholder="zip" value="{{$user->zip}}">
+           <input type="text" name="zip" required placeholder="zip" value="{{$user->zip}}">
          </div>
          <div class="form-group">
-           <input type="number" name="phone" required placeholder="phone" value="{{$user->phone}}">
+           <input type="text" name="phone" required placeholder="phone" value="{{$user->phone}}">
          </div>
          <div class="form-group">
           <select type="text" name="group_id" required>
