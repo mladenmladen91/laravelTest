@@ -37,12 +37,12 @@
 <div class="container-fluid nav_container">
 			<div class="container">
                 
-				<nav class="col-12 navbar navbar-expand-lg px-0">
-					
+				<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+					<a class="navbar-brand" href="{{route('home.index')}}">Home</a>
 					<div class="collapse navbar-collapse" id="navbarMenu">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item">
-								<a class="nav-link nav-link-not-dropdown" href="{{route('groups.index')}}">Categories</a>
+								<a class="nav-link nav-link-not-dropdown" href="{{route('groups.index')}}">Groups</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link nav-link-not-dropdown" href="{{route('users.index')}}">Contacts</a>
@@ -65,9 +65,7 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"></h1>
-
+            <div class="col-lg-12 page_title">
                 @yield('content')
             </div>
             <!-- /.col-lg-12 -->

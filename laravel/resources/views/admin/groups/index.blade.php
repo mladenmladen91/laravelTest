@@ -2,10 +2,10 @@
 @section('content')
   
 <div class="container">
-  <div class="col-12"> <h1>Group</h1></div>
-  <div class="col-12"><a href="{{route('groups.create')}}">Create group</a></div>     
+  <div class="col-12"> <h1>Groups</h1></div>
+  <div class="col-12"><a class="create_link" href="{{route('groups.create')}}">Create group</a></div>     
   <div class="col-12">
-     <table>
+     <table border="1">
         <tr>
            <th>Name</th>     
         </tr>
@@ -14,7 +14,7 @@
              <td><form action="{{route('groups.destroy', $group->id)}}" method="post">
                   @method('DELETE')
                   @csrf
-                    <button type="submit" class="bg-primary">Delete</button>
+                    <button type="submit">Delete</button>
                  </form></td>
          </tr>
         @endforeach  

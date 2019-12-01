@@ -4,7 +4,7 @@
 <div class="container">
   <div class="col-12"> <h1>Create user</h1></div>   
   <div class="col-12">
-     <form action="{{route('users.store')}}" method="post">
+     <form action="{{route('users.store')}}" method="post" enctype="multipart/form-data">
          @csrf
          <div class="form-group">
            <input type="text" name="first_name" required placeholder="first_name">
@@ -13,7 +13,7 @@
            <input type="text" name="last_name" required placeholder="last_name">
          </div>
          <div class="form-group">
-           <input type="text" name="avatar" required placeholder="avatar">
+           <input type="file" name="avatar" required placeholder="avatar">
          </div>
          <div class="form-group">
            <input type="email" name="email" required placeholder="email">

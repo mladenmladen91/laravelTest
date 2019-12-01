@@ -13,7 +13,9 @@
 
 
 
-Route::get('/','AdminController@index');
+Route::get('/','AdminController@index')->name('home.index');
+
+
 
 Route::get('admin/users','UsersController@index')->name('users.index');
 

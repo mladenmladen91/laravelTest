@@ -35,14 +35,14 @@ $factory->define(User::class, function (Faker $faker) {
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
-        'avatar' => $faker->firstName,
+        'avatar' => 'admin.png',
         'address' => $faker->address,
         'country' => 'Montenegro',
         'zip' => '364343',
         'group_id' => function(){
             return factory('App\Group')->create()->id;
         },
-        'phone' => 56546565,
+        'phone' => $faker->phoneNumber,
         'remember_token' => Str::random(10),
     ];
 });

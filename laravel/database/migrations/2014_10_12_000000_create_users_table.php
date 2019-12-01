@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('avatar')->nullable();
-            $table->integer('zip')->nullable();
-            $table->integer('phone')->nullable();
+            $table->text('zip')->nullable();
+            $table->text('phone')->nullable();
             $table->string('country')->nullable();
             $table->string('address')->nullable();
             $table->integer('group_id')->default(0)->index();

@@ -14,6 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         factory('App\User',1000)->create()->each(function ($user) {
         $user->notes()->create(['name'=> "testing only"]);
-    });;
+    });
     }
 }

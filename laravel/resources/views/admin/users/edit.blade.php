@@ -2,9 +2,9 @@
 @section('content')
   
 <div class="container">
-  <div class="col-12"> <h1>Update user</h1></div>   
+  <div class="col-12"> <h1>Update contact</h1></div>   
   <div class="col-12">
-     <form action="{{route('users.update', $user->id)}}" method="post">
+     <form action="{{route('users.update', $user->id)}}" method="post" enctype="multipart/form-data">
          @method('PUT')
          @csrf
          <div class="form-group">
@@ -14,7 +14,8 @@
            <input type="text" name="last_name" required placeholder="last_name" value="{{$user->last_name}}">
          </div>
          <div class="form-group">
-           <input type="text" name="avatar" required placeholder="avatar" value="{{$user->avatar}}">
+           <input type="file" name="avatar" placeholder="avatar">
+           <img src="{{URL::to('images/'.$user->avatar)}}" width="100" height="100">  
          </div>
          <div class="form-group">
            <input type="email" name="email" required placeholder="email" value="{{$user->email}}">

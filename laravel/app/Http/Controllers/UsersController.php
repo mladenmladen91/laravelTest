@@ -41,6 +41,13 @@ class UsersController extends Controller
         $note = $request->name;
         $user = User::create($input);
         $user->notes()->create(['name'=> $note]);
+        if($file = $request->file('avatar')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images',$name);
+            $user['avatar']= $name;
+        }
+        $user->save();
+        
         return redirect(route('users.index'));
     }
 
@@ -80,6 +87,14 @@ class UsersController extends Controller
         //$input = $request->all();
         $note = $request->name;
         $user = User::find($id);
+        
+        if ($file = $request->file('avatar')) {
+            $name = time(). $file->getClientOriginalName();
+            $file->move('images', $name);
+            unlink(public_path().'/images/'.$user->avatar);
+            $input['avatar'] = $name;
+        }
+        
         $user->update($input);
         $user->notes()->update(['name'=> $note]);
         return redirect()->back();
@@ -95,6 +110,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $user->notes()->delete();
+        unlink(public_path().'/images/'.$user->avatar);
         $user->delete();
         return redirect(route('users.index'));
     }
