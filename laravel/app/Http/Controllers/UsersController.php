@@ -96,7 +96,11 @@ class UsersController extends Controller
         }
         
         $user->update($input);
+        if($user->notes()->count() > 0){
         $user->notes()->update(['name'=> $note]);
+        }else{
+           $user->notes()->create(['name'=> $note]); 
+        }
         return redirect()->back();
     }
 
