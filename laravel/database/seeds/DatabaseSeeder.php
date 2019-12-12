@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         
         /*factory('App\User',1000)->create()->each(function ($user) {
-        $user->notes()->create(['name'=> "testing only"]);*/
+        $user->notes()->create(['name'=> "testing only"]);
+         }); */
         $kategorija = factory('App\Group')->create()->id;
         $data = [];
         $noteData = [];
@@ -39,28 +40,6 @@ class DatabaseSeeder extends Seeder
         }
         User::insert($data);
         Note::insert($noteData);
-     
         
-    /*  $data2 =[];
-        
-        for($i = 0;$i < 1000; $i++){
-            $data1 = ['first_name'=>'test','last_name'=>'test2','avatar'=>'admin.png','zip'=>'567','phone'=>'67788','country'=>'Montenegro','address'=>'testing st.','group_id'=>$kategorija, 'email'=>'test@example.com'];
-            array_push($data2, $data1);
-            
-        }
-        User::insert($data2);
-        
-        $data3 =[];
-        
-        for($i = 0;$i < 1000; $i++){
-            $data1 = ['first_name'=>'test','last_name'=>'test2','avatar'=>'admin.png','zip'=>'567','phone'=>'67788','country'=>'Montenegro','address'=>'testing st.','group_id'=>$kategorija, 'email'=>'test@example.com'];
-            array_push($data3, $data1);
-            
-        }
-        User::insert($data3); */
-        
-        
-        
-   // });
     }
 }
