@@ -14,8 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(70);
-        return view('admin.users.index', compact('users'))->with(["notes","group"]);
+        $users = User::with(["notes","group"])->paginate(40);
+        return view('admin.users.index', compact('users'));
     }
 
     /**
