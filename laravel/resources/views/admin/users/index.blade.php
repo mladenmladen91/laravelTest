@@ -20,7 +20,7 @@
         </tr>
          @foreach($users as $user)
            <tr>
-              <td>{{$user->first_name}}</td>
+              <td>{{$user->first_name}}{{$user->id}}</td>
               <td>{{$user->last_name}}</td>
                <td>{{$user->email}}</td>
                <td><img src="../images/{{$user->avatar}}" height="50" width="50"></td>

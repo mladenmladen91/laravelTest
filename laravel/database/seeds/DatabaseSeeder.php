@@ -28,29 +28,31 @@ class DatabaseSeeder extends Seeder
             $j = 0;
         }
         
-        $data3 = [];
-        $noteData2 = [];
-        
-        for($i = 1;$i < 100; $i++){
-            $data1 = ['first_name'=>$faker->firstName,'last_name'=>$faker->lastName,'avatar'=>'admin.png','zip'=>'567','phone'=>$faker->phoneNumber,'country'=>'Montenegro','address'=>$faker->address,'group_id'=>$kategorija, 'email'=>$faker->unique()->safeEmail];
-            array_push($data3, $data1);
-            
-            $data2 = ['name'=>'test text','user_id'=>$j + $i];
-            array_push($noteData2, $data2);
-        }
-        User::insert($data3);
-        Note::insert($noteData2);
+      
         
         
-        for($i = 1;$i < 1001; $i++){
+        for($i = 1;$i < 5001; $i++){
             $data1 = ['first_name'=>$faker->firstName,'last_name'=>$faker->lastName,'avatar'=>'admin.png','zip'=>'567','phone'=>$faker->phoneNumber,'country'=>'Montenegro','address'=>$faker->address,'group_id'=>$kategorija, 'email'=>$faker->unique()->safeEmail];
             array_push($data, $data1);
             
-            $data2 = ['name'=>'test text','user_id'=>$j + $i];
+            $data2 = ['name'=>$faker->realText,'user_id'=>($j + $i)];
             array_push($noteData, $data2);
         }
         User::insert($data);
         Note::insert($noteData);
+        
+      /*  $data4 = [];
+        $noteData3 = [];
+        
+        for($i = 1;$i < 5001; $i++){
+            $data1 = ['first_name'=>$faker->firstName,'last_name'=>$faker->lastName,'avatar'=>'admin.png','zip'=>'567','phone'=>$faker->phoneNumber,'country'=>'Montenegro','address'=>$faker->address,'group_id'=>$kategorija, 'email'=>$faker->unique()->safeEmail];
+            array_push($data4, $data1);
+            
+            $data2 = ['name'=>'test text','user_id'=>$j + $i];
+            array_push($noteData3, $data2);
+        }
+        User::insert($data4);
+        Note::insert($noteData3);*/
         
     }
 }
