@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Note;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,9 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         
-        /*factory('App\User',1000)->create()->each(function ($user) {
-        $user->notes()->create(['name'=> "testing only"]);
-         }); */
+         $faker = Faker::create();
         $kategorija = factory('App\Group')->create()->id;
         $data = [];
         $noteData = [];
@@ -33,9 +32,7 @@ class DatabaseSeeder extends Seeder
         $noteData2 = [];
         
         for($i = 1;$i < 100; $i++){
-            $name = "John{$j}";
-            $surname = "Doe{$i}";
-            $data1 = ['first_name'=>$name,'last_name'=>$surname,'avatar'=>'admin.png','zip'=>'567','phone'=>'67788','country'=>'Montenegro','address'=>'testing st.','group_id'=>$kategorija, 'email'=>'test@example.com'];
+            $data1 = ['first_name'=>$faker->firstName,'last_name'=>$faker->lastName,'avatar'=>'admin.png','zip'=>'567','phone'=>$faker->phoneNumber,'country'=>'Montenegro','address'=>$faker->address,'group_id'=>$kategorija, 'email'=>$faker->unique()->safeEmail];
             array_push($data3, $data1);
             
             $data2 = ['name'=>'test text','user_id'=>$j + $i];
@@ -46,9 +43,7 @@ class DatabaseSeeder extends Seeder
         
         
         for($i = 1;$i < 1001; $i++){
-            $name = "John{$j}";
-            $surname = "Doe{$i}";
-            $data1 = ['first_name'=>$name,'last_name'=>$surname,'avatar'=>'admin.png','zip'=>'567','phone'=>'67788','country'=>'Montenegro','address'=>'testing st.','group_id'=>$kategorija, 'email'=>'test@example.com'];
+            $data1 = ['first_name'=>$faker->firstName,'last_name'=>$faker->lastName,'avatar'=>'admin.png','zip'=>'567','phone'=>$faker->phoneNumber,'country'=>'Montenegro','address'=>$faker->address,'group_id'=>$kategorija, 'email'=>$faker->unique()->safeEmail];
             array_push($data, $data1);
             
             $data2 = ['name'=>'test text','user_id'=>$j + $i];
