@@ -29,6 +29,22 @@ class DatabaseSeeder extends Seeder
             $j = 0;
         }
         
+        $data3 = [];
+        $noteData2 = [];
+        
+        for($i = 1;$i < 100; $i++){
+            $name = "John{$j}";
+            $surname = "Doe{$i}";
+            $data1 = ['first_name'=>$name,'last_name'=>$surname,'avatar'=>'admin.png','zip'=>'567','phone'=>'67788','country'=>'Montenegro','address'=>'testing st.','group_id'=>$kategorija, 'email'=>'test@example.com'];
+            array_push($data3, $data1);
+            
+            $data2 = ['name'=>'test text','user_id'=>$j + $i];
+            array_push($noteData2, $data2);
+        }
+        User::insert($data3);
+        Note::insert($noteData2);
+        
+        
         for($i = 1;$i < 1001; $i++){
             $name = "John{$j}";
             $surname = "Doe{$i}";
