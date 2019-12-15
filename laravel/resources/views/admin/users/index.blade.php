@@ -29,7 +29,7 @@
                <td>{{$user->zip}}</td>
                <td>{{$user->phone}}</td>
                <td>{{@$user->group->name}}</td>
-               <td>{{@$user->notes->name}}</td>
+               <td>{{Str::limit(@$user->notes->name,20)}}</td>
                <td>
                   <form action="{{route('users.destroy', $user->id)}}" method="post">
                   @method('DELETE')
