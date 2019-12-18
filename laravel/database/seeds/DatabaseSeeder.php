@@ -18,7 +18,10 @@ class DatabaseSeeder extends Seeder
          $faker = Faker::create();
         $kategorija = factory('App\Group')->create()->id;
         
-       
+       $p= 1;
+        
+        while($p < 14){
+        
         $total = User::all()->count();
         
         if($total > 0){
@@ -40,8 +43,11 @@ class DatabaseSeeder extends Seeder
         }
         User::insert($data);
         Note::insert($noteData);
+         
+        $p++;    
+        }
         
-        $total = User::all()->count();
+      /*  $total = User::all()->count();
         $j = $total;
         
         $data3 = [];
@@ -189,7 +195,7 @@ class DatabaseSeeder extends Seeder
             array_push($noteData13, $data2);
         }
         User::insert($data13);
-        Note::insert($noteData13);
+        Note::insert($noteData13);*/
         
         
         
